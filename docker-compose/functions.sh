@@ -75,17 +75,12 @@ function migrate(){
 function permissions_update(){
     sudo chown -R $USER:$USER app
     sudo chown -R $USER:$USER .env
-    sudo chown -R $USER:$USER .gitattributes
-    sudo chown -R $USER:$USER .gitignore
-    sudo chown -R $USER:$USER .ruby-version
-    sudo chown -R $USER:$USER Dockerfile
     sudo chown -R $USER:$USER Gemfile
     sudo chown -R $USER:$USER Gemfile.lock
     sudo chown -R $USER:$USER README.md
-    sudo chown -R $USER:$USER Rakefile
-    sudo chown -R $USER:$USER config.ru
     sudo chown -R $USER:$USER docker-compose.yml
     sudo chown -R $USER:$USER start.sh
+    sudo chown -R $USER:$USER docker-compose/functions.sh
     echo permissões atualisadas!
 }
 

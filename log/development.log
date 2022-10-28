@@ -1,0 +1,137 @@
+  [1m[35m (14.4ms)[0m  [1m[35mCREATE DATABASE "test_development" ENCODING = 'unicode'[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5500460946189152580)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-10-28 20:31:16.300322"], ["updated_at", "2022-10-28 20:31:16.300322"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5500460946189152580)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 172.25.0.1 at 2022-10-28 20:33:18 +0000
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-6.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-6.1.7/lib/rails/templates/rails/welcome/index.html.erb (Duration: 4.4ms | Allocations: 403)
+Completed 200 OK in 11ms (Views: 6.8ms | ActiveRecord: 0.0ms | Allocations: 3470)
+
+
+Started GET "/" for 172.26.0.1 at 2022-10-28 20:35:59 +0000
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-6.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-6.1.7/lib/rails/templates/rails/welcome/index.html.erb (Duration: 3.1ms | Allocations: 297)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 2336)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5500460946189152580)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePessoas (20221028203935)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "pessoas" ("id" bigserial primary key, "nome" character varying, "data_nascimento" date, "rg" character varying, "endereco" character varying, "telefone" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221028203935"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(5500460946189152580)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 172.27.0.1 at 2022-10-28 20:41:37 +0000
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-6.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-6.1.7/lib/rails/templates/rails/welcome/index.html.erb (Duration: 3.1ms | Allocations: 297)
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 2350)
+
+
+Started GET "/rails/info/routes" for 172.27.0.1 at 2022-10-28 20:41:52 +0000
+Processing by Rails::InfoController#routes as HTML
+  Rendering layout /usr/local/bundle/gems/railties-6.1.7/lib/rails/templates/layouts/application.html.erb
+  Rendering /usr/local/bundle/gems/railties-6.1.7/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /usr/local/bundle/gems/actionpack-6.1.7/lib/action_dispatch/middleware/templates/routes/_route.html.erb [34 times] (Duration: 6.3ms | Allocations: 3932)
+  Rendered /usr/local/bundle/gems/actionpack-6.1.7/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 2.5ms | Allocations: 1118)
+  Rendered /usr/local/bundle/gems/railties-6.1.7/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 14.1ms | Allocations: 9299)
+  Rendered layout /usr/local/bundle/gems/railties-6.1.7/lib/rails/templates/layouts/application.html.erb (Duration: 14.8ms | Allocations: 9523)
+Completed 200 OK in 16ms (Views: 15.6ms | ActiveRecord: 0.0ms | Allocations: 10482)
+
+
+Started GET "//pessoas" for 172.27.0.1 at 2022-10-28 20:42:11 +0000
+Processing by PessoasController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pessoas/index.html.erb within layouts/application
+  [1m[36mPessoa Load (0.6ms)[0m  [1m[34mSELECT "pessoas".* FROM "pessoas"[0m
+  ↳ app/views/pessoas/index.html.erb:18
+  Rendered pessoas/index.html.erb within layouts/application (Duration: 7.9ms | Allocations: 1606)
+  Rendered layout layouts/application.html.erb (Duration: 34.9ms | Allocations: 18296)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 2.1ms | Allocations: 19597)
+
+
+  
+ActionView::Template::Error (undefined method `javascript_pack_tag' for #<ActionView::Base:0x00000000006f40>
+Did you mean?  javascript_path
+               javascript_tag):
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+    13:   <body>
+  
+app/views/layouts/application.html.erb:10
+Started GET "//pessoas" for 172.27.0.1 at 2022-10-28 20:42:38 +0000
+Processing by PessoasController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pessoas/index.html.erb within layouts/application
+  [1m[36mPessoa Load (0.2ms)[0m  [1m[34mSELECT "pessoas".* FROM "pessoas"[0m
+  ↳ app/views/pessoas/index.html.erb:18
+  Rendered pessoas/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1380)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 2999)
+Completed 200 OK in 8ms (Views: 5.2ms | ActiveRecord: 1.3ms | Allocations: 4271)
+
+
+Started GET "/pessoas/new" for 172.27.0.1 at 2022-10-28 20:42:47 +0000
+Processing by PessoasController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pessoas/new.html.erb within layouts/application
+  Rendered pessoas/_form.html.erb (Duration: 13.5ms | Allocations: 7638)
+  Rendered pessoas/new.html.erb within layouts/application (Duration: 14.1ms | Allocations: 7958)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 9374)
+Completed 200 OK in 26ms (Views: 16.3ms | ActiveRecord: 2.4ms | Allocations: 13433)
+
+
+Started POST "/pessoas" for 172.27.0.1 at 2022-10-28 20:43:00 +0000
+Processing by PessoasController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pessoa"=>{"nome"=>"joaquim", "data_nascimento(1i)"=>"2022", "data_nascimento(2i)"=>"10", "data_nascimento(3i)"=>"28", "rg"=>"161565165", "endereco"=>"dsfaljldsjfas", "telefone"=>"o1561651"}, "commit"=>"Create Pessoa"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pessoas_controller.rb:26:in `create'
+  [1m[36mPessoa Create (0.6ms)[0m  [1m[32mINSERT INTO "pessoas" ("nome", "data_nascimento", "rg", "endereco", "telefone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["nome", "joaquim"], ["data_nascimento", "2022-10-28"], ["rg", "161565165"], ["endereco", "dsfaljldsjfas"], ["telefone", "o1561651"], ["created_at", "2022-10-28 20:43:00.527461"], ["updated_at", "2022-10-28 20:43:00.527461"]]
+  ↳ app/controllers/pessoas_controller.rb:26:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pessoas_controller.rb:26:in `create'
+Redirected to http://localhost:3000/pessoas/1
+Completed 302 Found in 5ms (ActiveRecord: 1.0ms | Allocations: 2449)
+
+
+Started GET "/pessoas/1" for 172.27.0.1 at 2022-10-28 20:43:00 +0000
+Processing by PessoasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPessoa Load (0.3ms)[0m  [1m[34mSELECT "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pessoas_controller.rb:51:in `set_pessoa'
+  Rendering layout layouts/application.html.erb
+  Rendering pessoas/show.html.erb within layouts/application
+  Rendered pessoas/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 494)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 1906)
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.5ms | Allocations: 3165)
+
+
+Started GET "/pessoas" for 172.27.0.1 at 2022-10-28 20:43:14 +0000
+Processing by PessoasController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pessoas/index.html.erb within layouts/application
+  [1m[36mPessoa Load (0.3ms)[0m  [1m[34mSELECT "pessoas".* FROM "pessoas"[0m
+  ↳ app/views/pessoas/index.html.erb:18
+  Rendered pessoas/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 855)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2262)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.3ms | Allocations: 2532)
+
+
